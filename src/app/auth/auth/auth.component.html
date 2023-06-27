@@ -1,0 +1,33 @@
+<mat-sidenav-container class="example-container">
+   
+    <mat-sidenav-content>
+        <div class="col-md-6 offset-md-3">
+            <div class="content mat-elevation-z8 justify-content-center">
+                <div class="login-form">
+                    <img class="avatar  logo mat-elevation mt-5" src="https://tja.ucb.edu.bo/wp-content/uploads/2020/09/cropped-logo-UCB.png" alt="">
+                    
+                    <div class="mt-2">
+                        <label for="email" class="mt-5 d-flex justify-content-center">
+                        Correo
+                        </label>
+                        <input type="email" class="form-control mt-2" placeholder="admin@gmail.com">
+                    </div>
+
+                    <div class="mt-2">
+                        <label for="password" class="mt-5 d-flex justify-content-center">
+                        Contraseña
+                        </label>
+                        <input type="password" class="form-control mt-2">
+                    </div>
+
+                    <div class="col-md-12 d-flex justify-content-center mt-5">
+                        <button type="button" class="btn btn-primary" (click)="login();">Iniciar Sesion</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        
+    </mat-sidenav-content>
+</mat-sidenav-container>

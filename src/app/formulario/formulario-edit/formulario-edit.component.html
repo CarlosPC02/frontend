@@ -1,0 +1,39 @@
+<mat-label>Editar Formulario</mat-label>
+<hr>
+
+<form #studentForm= "ngForm" >
+
+    <mat-grid-list cols="2" rowHeight="4:1">
+        
+        <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+                <mat-label [ngClass]="{'text-danger': formularioNombre.touched && formularioNombre.invalid, 'text-success': formularioNombre.touched && formularioNombre.valid}">Nombre</mat-label>
+                <input matInput name="formularioNombre" [(ngModel)]="formularios.formularioNombre" placeholder=""  #formularioNombre="ngModel" [ngClass]="{'is-invalid': formularioNombre.touched && formularioNombre.invalid, 'is-valid': formularioNombre.touched && formularioNombre.valid} " required>
+                <div class="valid-feedback">Completado</div>
+                <div class="invalid-feedback">Favor insertar nombre</div>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+                <mat-label [ngClass]="{'text-danger': formularioUrl.touched && formularioUrl.invalid, 'text-success': formularioUrl.touched && formularioUrl.valid}" >Url</mat-label>
+                <input matInput type="url" name="formularioUrl" [(ngModel)]="formularios.formularioUrl" placeholder="" #formularioUrl="ngModel" [ngClass]="{'is-invalid': formularioUrl.touched && formularioUrl.invalid, 'is-valid': formularioUrl.touched && formularioUrl.valid} " required>
+                <div class="valid-feedback">Completado</div>
+                <div class="invalid-feedback">Favor insertar url</div>
+            </mat-form-field>
+        </mat-grid-tile>
+        
+        <mat-grid-tile>
+            <label  class="form-label" style="font-size: 14px; margin-left: 15px; color:black" for="">Fecha</label>
+            <input type="date" placeholder="Datepicker" name="formularioFecha" class="form-control fecha" style="margin-left: 15px; margin-right: 15px;"
+            [(ngModel)]="formularios.formularioFecha"
+            required>
+            <div class="valid-feedback">Completado</div>
+            <div class="invalid-feedback">Favor insertar fecha</div>
+        </mat-grid-tile>
+        
+    </mat-grid-list>
+    
+    <button mat-raised-button type="submit" color="primary" (click)="editarFormulario()" *ngIf="studentForm.valid"  >Editar Formulario</button>
+ 
+</form>

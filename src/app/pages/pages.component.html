@@ -1,0 +1,70 @@
+<mat-toolbar>
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()"> 
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    <span>Panel de Formularios</span>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav class="mat-elevation-z8" #sidenav="matSidenav" mode="side" opened>
+        <img id="logo" class="avatar mat-elevation-z8" src="https://tja.ucb.edu.bo/wp-content/uploads/2020/09/cropped-logo-UCB.png" alt="">
+        <h4 class="name">Usuario</h4>
+        <p class="designation">Operador</p>
+
+
+        <mat-divider></mat-divider>
+        <h4>Formularios</h4>
+        <button mat-button class="menu-button">
+            <mat-icon>add</mat-icon>
+            <span><a [routerLink]="['formulario/formularioCrear']">Crear</a></span>
+        </button>
+
+        <button mat-button class="menu-button">
+            <mat-icon>listAlt</mat-icon>
+            <span><a [routerLink]="['formulario/formularios']">Lista</a></span>
+        </button>
+
+        <button mat-button class="menu-button">
+            <mat-icon>edit</mat-icon>
+            <span><a [routerLink]="['formulario/formularioEditar']">Editar</a></span>
+        </button>
+
+        <mat-divider></mat-divider>
+        
+        <h4>Versiones</h4>
+        <button mat-button class="menu-button">
+            <mat-icon>add</mat-icon>
+            <span><a [routerLink]="['formulario/formularioCrear']">Crear</a></span>
+        </button>
+
+        <button mat-button class="menu-button">
+            <mat-icon>listAlt</mat-icon>
+            <span><a [routerLink]="['formulario/formularios']">Lista</a></span>
+        </button>
+
+        <button mat-button class="menu-button">
+            <mat-icon>edit</mat-icon>
+            <span><a [routerLink]="['formulario/formularioEditar']">Editar</a></span>
+        </button>
+
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button">
+            <mat-icon>logout</mat-icon>
+            <span>Cerrar Sesion</span>
+        </button>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+        <div class="content mat-elevation-z8">
+            <router-outlet></router-outlet>
+        </div>
+        
+    </mat-sidenav-content>
+</mat-sidenav-container>
